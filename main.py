@@ -8,17 +8,7 @@ def SpeakText(command):
     engine = pyttsx3.init()
     engine.say(command) 
     engine.runAndWait()
-<<<<<<< HEAD
-    
-# init("nsss", True)
-    
 
-while(1):    
-=======
->>>>>>> 730010b9deae29d058f1ff0e7c390095421eafb2
-     
-     
- 
 while(1):    
      
     print("saoijasdoiajsd")
