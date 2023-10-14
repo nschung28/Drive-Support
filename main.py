@@ -13,7 +13,7 @@ def SpeakText(command):
 # init("nsss", True)
     
 
-while(True):    
+while(1):    
      
     # Exception handling to handle
     # exceptions at the runtime
