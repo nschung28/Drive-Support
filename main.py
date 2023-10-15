@@ -29,7 +29,10 @@ def SpeakText(command):
 #     else:
 #         return False
     
-def is_siren(sample_rate, audio_data): #tester will build off into sirens iff works
+
+# https://www.youtube.com/watch?v=8zNazQvOhNo
+# video used to test is_siren ^
+def is_siren(sample_rate, audio_data):
     audio_data = audio_data.astype(np.float32) / 32767.0
 
     frequencies = np.fft.fftfreq(len(np.fft.fft(audio_data)), 1 / sample_rate)
@@ -37,15 +40,17 @@ def is_siren(sample_rate, audio_data): #tester will build off into sirens iff wo
 
     print(curr_frequency)
 
-    low_freq = 1000  # Adjust this value based on your use case
-    high_freq = 3000  # Adjust this value based on your use case
+    low_freq = 1000  # here and line 44 will need to be adjusted based on mic
+    high_freq = 3000  
 
     if low_freq < curr_frequency < high_freq:
         return True
     else:
         return False
     
-def is_honk(sample_rate, audio_data): #tester will build off into sirens iff works
+# https://www.youtube.com/watch?v=8zNazQvOhNo
+# video is used to test honking noises ^
+def is_honk(sample_rate, audio_data):
     audio_data = audio_data.astype(np.float32) / 32767.0
 
     frequencies = np.fft.fftfreq(len(np.fft.fft(audio_data)), 1 / sample_rate)
@@ -53,8 +58,8 @@ def is_honk(sample_rate, audio_data): #tester will build off into sirens iff wor
 
     print(curr_frequency)
 
-    low_freq = 600  # Adjust this value based on your use case
-    high_freq = 900  # Adjust this value based on your use case
+    low_freq = 600  # here and line 62 will need to be adjusted based on mic
+    high_freq = 900  
 
     if low_freq < curr_frequency < high_freq:
         return True
